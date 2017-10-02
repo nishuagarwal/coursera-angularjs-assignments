@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" >
+  <title>Lunch Check - Module-1 Assignment</title>
+  <style>
+    body {font:1.3em;}
+    .error-msg{
+      color: #ff3333;
+    }
+    .success-msg{
+      color: green;
+
+    }
+    .highlight-error{
+      border-color: #ff3333;
+    }
+  </style>
+  <script type='text/javascript' src='../external-js/angular.min.js' ></script>
+  <script type='text/javascript' src='custom-js/app.js' ></script>
+</head>
+<body ng-app="LunchCheck">
+  <h1>Lunch Check - Module-1 Assignment</h1>
+  <div ng-controller="LunchCheckController">
+    <div>
+      <div>
+        List items you eat for lunch (comma separated):
+        <input type='text' ng-model="items" class='{{elemHighlighterClass}}' />
+        <!-- empty item, i.e., , , will not b considered as an item towards to the count -->
+        <span>Empty items would not be considered towards count</span>
+      </div>
+      <div>
+        <button ng-click="showLunchMsg()"  >Check If Too Much</button>
+      </div>
+      <div class="{{msgClass}}"  >{{lunchChkMsg}}</div>
+    </div>
+  </div>
+</body>
+</html>
